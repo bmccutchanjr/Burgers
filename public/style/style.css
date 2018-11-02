@@ -1,0 +1,54 @@
+*
+{   box-sizing: border-box;
+}
+
+:root
+{   --head-bg-color: rgba(255, 0, 0, 0.5);
+    --head-brd-color: black;
+}
+
+body
+{   background: url("../images/bigsloppyburger.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+}
+
+header
+{   font-size: 39pt;
+    padding: 20px;
+    text-align: center;
+}
+
+/*                                          */
+/*  style specific to sticky footer         */
+/*                                          */
+
+body, html
+{   height: 100%;
+}
+
+#wrapper
+{   background: rgba(0, 255, 0, 0.5);
+    margin-bottom: -36px;
+    min-height: 100%;
+}
+
+#push
+{   background: yellow;
+    height: 36px;
+}
+
+footer
+{   background: gray;
+    color: white;
+    padding: 10px;
+}
+
+/*                                          */
+/*  media queries for responsive design     */
+/*                                          */

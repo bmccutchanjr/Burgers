@@ -14,7 +14,7 @@ connection.connect (function (error)
 
     if (error) throw error;
 
-    console.log ("Connected to database as ", connection.threadID);
+    console.log ("Connected to database as", connection.threadId);
 });
 
 module.exports = connection;

@@ -5,7 +5,10 @@ console.log("burgers");
 
 const burgers =
 {   select:  function (cb)
-    {   orm.selectAll ();
+    {   orm.selectAll (function(res)
+        {
+        cb(res);
+        });
     },
 
     insert: function (cb)
@@ -18,3 +21,20 @@ const burgers =
 }
 
 module.exports = burgers;
+// var all = function(cb)
+// {
+//     orm.selectAll (function(res)
+//     {
+//       cb(res);
+//     });
+// };
+
+// all(function(data)
+// {
+//     var hbsObject =
+//     {
+//       cats: data
+//     };
+//     console.log(hbsObject);
+//     // res.render("index", hbsObject);
+// });

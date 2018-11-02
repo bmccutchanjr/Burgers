@@ -1,23 +1,45 @@
 // Require the dependencies
-const orm = require("./connection.js");
+const connection = require("./connection.js");
 
-function selectAll ()
-{
-    console.log ("selectAll ()");
-};
+const orm =
+{   selectAll: function(cb)
+    {
+        var queryString = "select * from burgers;";
 
-function insertOne ()
-{
-    console.log ("insertOne ()");
-};
+        connection.query(queryString, function(error, result)
+        {   if (error) throw error;
 
-function updateOne ()
-{
-    console.log ("updateOne ()");
-};
+            cb(result);
+        });
 
-module.exports = 
-{   selectAll,
-    insertOne,
-    updateOne
+        // console.log ("selectAll ()");
+    },
+
+    // insertOne: function(burger)
+    // {   // Insert a new burger into the database
+
+    //     var query = "insert into burgers (burger_name) values (?);";
+
+    //     connection.query(query, function(error, result)
+    //     {   if (error) throw error;
+
+    //         cb(result);
+    //     });
+    // // console.log ("insetOne ()");
+    // },
+
+    // updateOne: function (burgerID)
+    // {   query = "delete from burgers where id = ?;";
+    
+    //     connection.query(query, function(error, result)
+    //     {   
+    //         if (error) throw error;
+
+    //         cb(result);
+    //     })
+
+    // // console.log ("updateOne ()");
+    // }
 }
+
+module.exports = orm;
