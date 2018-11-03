@@ -28,7 +28,9 @@ $(document).ready(function()
 
 console.log (event.target);
 console.log ($(this).val());
-        $.post("/api/burgers" + $(this).val(), function()
+        var data = { "data": $(this).val() };
+        
+        $.post("/api/burgers/", data, function()
         {   
 console.log("input a burger");
             location.reload();

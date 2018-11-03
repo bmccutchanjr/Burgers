@@ -15,18 +15,18 @@ console.log (chalk.yellow("selectAll ()"));
         });
     },
 
-    // insertOne: function(burger)
-    // {   // Insert a new burger into the database
+    insertOne: function(burgerText, cb)
+    {   // Insert a new burger into the database
+console.log ("insetOne ()");
+console.log ("burger: ", burgerText);
+        var query = "insert into burgers (burger_name) values (?);";
 
-    //     var query = "insert into burgers (burger_name) values (?);";
+        connection.query(query, burgerText, function(error, result)
+        {   if (error) throw error;
 
-    //     connection.query(query, function(error, result)
-    //     {   if (error) throw error;
-
-    //         cb(result);
-    //     });
-    // // console.log ("insetOne ()");
-    // },
+            cb(result);
+        });
+    },
 
     updateOne: function (burgerID, cb)
     {   

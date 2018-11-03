@@ -21,26 +21,6 @@ router
     console.log(chalk.blue("requesting file: ", request.url));
     next ();
 })
-.put("/api/devour/:id", function(request, response)
-{   // The "devour" button has been clicked...update the database
-// console.log(chalk.yellow("burger to devour: ", request.body.id))
-//     burgers.update(
-//     {   id: request.body.id
-//     },
-console.log(chalk.yellow("burger to devour: ", request.params.id))
-    burgers.update(request.params.id, function(result)
-    {
-        if (result.changedRows == 0)
-        {   // If no rows were changed, then the ID must not exist, so 404
-console.log(chalk.red("no joy"));
-            return response.status(404).end();
-        }
-        else
-        {   response.status(200).end();
-console.log(chalk.green("success"));
-        }
-    })
-})
 .get("/:folder/:file", function(request, response)
 {   // generic route to load static files
 
@@ -69,9 +49,36 @@ console.log(chalk.green("success"));
         response.render("index", hbsObject);
     });
 })
-.post("/", function(request, response)
-{
+.post("/api/burgers", function(request, response)
+{   // A POST request has been received for the /API route.  This represents a new burger, so insert a
+    // burger in the database
+console.log(chalk.yellow("post: ", request.body.data));
+    burgers.insert(request.body.data, function(result)
+    {
+        // if (result.changedRows == 0)
+        // {   // If no rows were changed, then the insert failed -- return status 500
 
+        //     return response.status(500).end();
+        // }
+        // else
+        {   response.status(200).end();
+        }
+    })
+})
+.put("/api/devour/:id", function(request, response)
+{   // The "devour" button has been clicked...update the database
+
+    burgers.update(request.params.id, function(result)
+    {
+        if (result.changedRows == 0)
+        {   // If no rows were changed, then the ID must not exist, so 404
+
+            return response.status(404).end();
+        }
+        else
+        {   response.status(200).end();
+        }
+    })
 });
 
 module.exports = router;

@@ -12,8 +12,11 @@ const burgers =
         });
     },
 
-    insert: function (cb)
-    {   orm.insertOne (function(res)
+    insert: function (text, cb)
+    {   
+console.log(chalk.yellow("burgers.insert()"));
+console.log(chalk.yellow("new burger: ", text));
+        orm.insertOne (text, function(res)
         {
             cb(res);
         });
@@ -21,8 +24,6 @@ const burgers =
 
     update: function (id, cb)
     {   
-console.log(chalk.yellow("burgers.update"));
-console.log(chalk.yellow("updating: ", id));
         orm.updateOne (id, function(res)
         {
             cb(res);
