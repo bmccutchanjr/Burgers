@@ -1,9 +1,11 @@
 // Require the dependencies
+const chalk = require("chalk");
 const connection = require("./connection.js");
 
 const orm =
 {   selectAll: function(cb)
     {
+console.log (chalk.yellow("selectAll ()"));
         var queryString = "select * from burgers;";
 
         connection.query(queryString, function(error, result)
@@ -11,8 +13,6 @@ const orm =
 
             cb(result);
         });
-
-        // console.log ("selectAll ()");
     },
 
     // insertOne: function(burger)
@@ -28,18 +28,20 @@ const orm =
     // // console.log ("insetOne ()");
     // },
 
-    // updateOne: function (burgerID)
-    // {   query = "delete from burgers where id = ?;";
+    updateOne: function (burgerID, cb)
+    {   
+console.log (chalk.yellow("updateOne ()"));
+console.log (chalk.yellow("burgerID: ", burgerID));
+        
+        query = "update burgers set devoured = true where id = ?;";
     
-    //     connection.query(query, function(error, result)
-    //     {   
-    //         if (error) throw error;
+        connection.query(query, burgerID, function(error, result)
+        {   
+            if (error) throw error;
 
-    //         cb(result);
-    //     })
-
-    // // console.log ("updateOne ()");
-    // }
+            cb(result);
+        })
+    },
 }
 
 module.exports = orm;

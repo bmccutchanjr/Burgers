@@ -21,6 +21,26 @@ router
     console.log(chalk.blue("requesting file: ", request.url));
     next ();
 })
+.put("/api/devour/:id", function(request, response)
+{   // The "devour" button has been clicked...update the database
+// console.log(chalk.yellow("burger to devour: ", request.body.id))
+//     burgers.update(
+//     {   id: request.body.id
+//     },
+console.log(chalk.yellow("burger to devour: ", request.params.id))
+    burgers.update(request.params.id, function(result)
+    {
+        if (result.changedRows == 0)
+        {   // If no rows were changed, then the ID must not exist, so 404
+console.log(chalk.red("no joy"));
+            return response.status(404).end();
+        }
+        else
+        {   response.status(200).end();
+console.log(chalk.green("success"));
+        }
+    })
+})
 .get("/:folder/:file", function(request, response)
 {   // generic route to load static files
 

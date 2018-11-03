@@ -1,23 +1,23 @@
-<header>Burgers!</header>
+<div id="burger-wrapper">
+    <div class="burger-div list-wish">
+    <p>Burgers I want to eat!</p>
+        <ul>
+        {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/unless}}
+        {{/each}}
+        </ul>
+    </div>
 
-Burgers I want to eat!
-<div class="burger-div list-wish">
-    <ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burger-block devoured=false}}
-        {{/unless}}
-    {{/each}}
-    </ul>
-</div>
-
-Burgers I have eaten!
-<div class="burger-div list-eaten">
-    <ul>
-    {{#each burgers}}
-        {{#if devoured}}
-        {{> burgers/burger-block devoured=true}}
-        {{/if}}
-    {{/each}}
-    </ul>
+    <div class="burger-div list-eaten">
+    <p>Burgers I have eaten!</p>
+        <ul>
+        {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/if}}
+        {{/each}}
+        </ul>
+    </div>
 </div>

@@ -19,8 +19,58 @@ body
 }
 
 header
-{   font-size: 39pt;
+{   background: var(--head-bg-color);
+    font-size: 39pt;
     padding: 20px;
+    text-align: center;
+}
+
+main
+{   background: rgba(0, 0, 255, 0.5);
+    padding: 5vh 5vw 5vh 5vw;
+    position: relative;
+}
+
+.burger-input
+{   background: rgba(0, 255, 255, 0.5);
+    margin: 0px auto;
+    padding: 10px;
+    text-align: center;
+    width: 500px;
+}
+
+.burger-label
+{   font-size: 18px;
+    font-weight: bold;
+}
+
+.burger-input .input
+{   border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 90%;
+}
+
+#burger-wrapper
+{   display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    width: 90vw;
+}
+
+.burger-div
+{   background: rgba(255, 255, 0, 0.5);
+    /* border: 2px solid black; */
+    /* border-radius: 3px; */
+    min-width: 400px;
+    width: 48%;
+}
+
+.burger-div p
+{   font-size: 18px;
+    font-weight: bold;
     text-align: center;
 }
 
