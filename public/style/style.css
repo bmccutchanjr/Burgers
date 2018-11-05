@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
 *
 {   box-sizing: border-box;
 }
 
 :root
-{   --head-bg-color: rgba(255, 0, 0, 0.5);
+{   --div-bg-color: rgba(255, 255, 255, 0.5);
+    --head-bg-color: rgba(255, 0, 0, 0.5);
     --head-brd-color: black;
 }
 
@@ -19,28 +22,31 @@ body
 }
 
 header
-{   background: var(--head-bg-color);
-    font-size: 39pt;
+{   
+    background: var(--head-bg-color);
+    font-family: "Fredoka One", cursive;
+    font-size: 48pt;
     padding: 20px;
     text-align: center;
 }
 
 main
-{   background: rgba(0, 0, 255, 0.5);
-    padding: 5vh 5vw 5vh 5vw;
+{   padding: 5vh 5vw 5vh 5vw;
     position: relative;
 }
 
 .burger-input
-{   background: rgba(0, 255, 255, 0.5);
-    margin: 0px auto;
+{   background: rgba(255, 255, 255, 0.5);
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 0px auto 25px;
     padding: 10px;
     text-align: center;
     width: 500px;
 }
 
 .burger-label
-{   font-size: 18px;
+{   font-size: 24px;
     font-weight: bold;
 }
 
@@ -60,10 +66,14 @@ main
     width: 90vw;
 }
 
+/*                                          */
+/*  style specific to .burger-div           */
+/*                                          */
+
 .burger-div
-{   background: rgba(255, 255, 0, 0.5);
-    /* border: 2px solid black; */
-    /* border-radius: 3px; */
+{   background: var(--div-bg-color);
+    border: 2px solid black;
+    border-radius: 3px;
     min-width: 400px;
     width: 48%;
 }
@@ -72,6 +82,90 @@ main
 {   font-size: 18px;
     font-weight: bold;
     text-align: center;
+}
+
+.burger-item
+{   display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0px auto;
+    margin-bottom: 3px;
+    position: relative;
+    width: 98%;
+}
+
+.burger-name
+{   background: blue;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    flex-grow: 1;
+    padding: 6px;
+    width: 80%;
+}
+
+.burger-button
+{   background: lightblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    display: block;
+    flex-grow: 0;
+    min-width: 70px;
+    padding: 3px;
+    position: absolute;
+    right: 3px;
+    text-align: center;
+    top: 3px;
+    width: 10%;
+}
+
+.burger-button:hover
+{   background: white;
+}
+
+/*                                          */
+/*  style specific to status messages       */
+/*                                          */
+
+.status-wrapper
+{   display: none;
+    position: fixed;
+    top: 30vh;
+    width: 100%;
+}
+
+.status-message
+{   background: #ff8f8f;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    height: auto;
+    margin: 0px auto;
+    min-height: 200px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    width: 75%;
+}
+
+.status-button
+{   background: red;
+    border: 1px solid black;
+    border-radius: 5px;
+    bottom: 5px;
+    color: white;
+    left: 2%;
+    padding: 5px;
+    position: absolute;
+    width: 96%;
+}
+
+.status-button:hover
+{   background: white;
+    color: black;
 }
 
 /*                                          */
@@ -83,14 +177,12 @@ body, html
 }
 
 #wrapper
-{   background: rgba(0, 255, 0, 0.5);
-    margin-bottom: -36px;
+{   margin-bottom: -36px;
     min-height: 100%;
 }
 
 #push
-{   background: yellow;
-    height: 36px;
+{   height: 36px;
 }
 
 footer

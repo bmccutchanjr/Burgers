@@ -14,8 +14,6 @@ const burgers =
 
     insert: function (text, cb)
     {   
-console.log(chalk.yellow("burgers.insert()"));
-console.log(chalk.yellow("new burger: ", text));
         orm.insertOne (text, function(res)
         {
             cb(res);
@@ -25,6 +23,14 @@ console.log(chalk.yellow("new burger: ", text));
     update: function (id, cb)
     {   
         orm.updateOne (id, function(res)
+        {
+            cb(res);
+        });
+    },
+
+    delete: function (id, cb)
+    {   
+        orm.deleteOne (id, function(res)
         {
             cb(res);
         });

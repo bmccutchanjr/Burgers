@@ -7,7 +7,7 @@ create table Burgers
                                     auto_increment
                                     not null,
                             
-    burger_name     varchar(30)     not null,
+    burger_name     varchar(50)     not null,
     
     devoured        boolean         default false,
     
