@@ -57,12 +57,12 @@ router
 })
 .put("/api/devour/:id", function(request, response)
 {   // The "devour" button has been clicked...update the database
-console.log(chalk.yellow("devouring"));
 
     burgers.update(request.params.id, function(result)
     {
         if (result.changedRows == 0)
-        {   // If no rows were changed, then the ID must not exist, so 404
+        {   // If no rows were changed, then the ID must not exist -- and that's a design problem
+            // so respond with a status code of 500
 
             return response.status(500).end();
         }
@@ -73,11 +73,12 @@ console.log(chalk.yellow("devouring"));
 })
 .delete("/api/delete/:id", function(request, response)
 {   // The "delete" button has been clicked...update the database
-console.log(chalk.yellow("deleting"));
+
     burgers.delete(request.params.id, function(result)
     {
         if (result.affectedRows == 0)
-        {   // If no rows were changed, then the ID must not exist, so 404
+        {   // If no rows were changed, then the ID must not exist -- and that's a design problem
+            // so respond with a status code of 500
 
             return response.status(500).end();
         }
