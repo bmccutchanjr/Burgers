@@ -194,3 +194,21 @@ footer
 /*                                          */
 /*  media queries for responsive design     */
 /*                                          */
+
+@media screen and (max-width: 992px)
+{   #burger-wrapper
+    {   justify-content: center;
+    }
+
+    .burger-div, .burger-input
+    {   margin-bottom: 25px;
+        min-width: 200px;
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 572px)
+{   .burger-div, .burger-input
+    {   width: 90vw;
+    }
+}

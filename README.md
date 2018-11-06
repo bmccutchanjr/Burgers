@@ -2,7 +2,7 @@
 
 Burgers is a full stack Node.js application written with ExpressJS and using Express-Handlebars and MySQL.  It implements a Model-View-Controller (MVC) paradigm that create multiple layers of abstraction.  It also uses Object-Relational Modeling (ORM), another abstraction, to interact with the database.
 
-It's a simple apllication, basically a "burger to do list".  Users enter a "burger" they would like to eat, and are able to track and manage the wish list with "devour" and "delete" buttons for each entry.
+It's a simple application, basically a "burger to do list".  Users enter a "burger" they would like to eat, and are able to track and manage the wish list with "devour" and "delete" buttons for each entry.
 
 [Have a look](https://bmccutchanjr-burgers.herokuapp.com) or watch the [video](https://drive.google.com/somelongstringofrandomcharacters).
 
