@@ -4,7 +4,7 @@ Burgers is a full stack Node.js application written with ExpressJS and using Exp
 
 It's a simple application, basically a "burger to do list".  Users enter a "burger" they would like to eat, and are able to track and manage the wish list with "devour" and "delete" buttons for each entry.
 
-[Have a look](https://bmccutchanjr-burgers.herokuapp.com) or watch the [video](https://drive.google.com/somelongstringofrandomcharacters).
+[Have a look](https://bmccutchanjr-burgers.herokuapp.com) or watch the [video](https://drive.google.com/file/d/1onIz9hobYicptweNtew0LWa7_f_tZ4h8/view).
 
 ![home page](public/images/screenshot.png)
 
