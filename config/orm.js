@@ -8,7 +8,7 @@ const connection = require("./connection.js");
 const orm =
 {   selectAll: function(cb)
     {
-        var queryString = "select * from burgers;";
+        var queryString = "select * from Burgers;";
 
         connection.query(queryString, function(error, result)
         {   if (error) throw error;
@@ -20,7 +20,7 @@ const orm =
     insertOne: function(burgerText, cb)
     {   // Insert a new burger into the database
 
-        var query = "insert into burgers (burger_name) values (?);";
+        var query = "insert into Burgers (burger_name) values (?);";
 
         connection.query(query, burgerText, function(error, result)
         {   if (error) throw error;
@@ -31,7 +31,7 @@ const orm =
 
     updateOne: function (burgerID, cb)
     {   
-        query = "update burgers set devoured = true where id = ?;";
+        query = "update Burgers set devoured = true where id = ?;";
     
         connection.query(query, burgerID, function(error, result)
         {   
@@ -43,7 +43,7 @@ const orm =
 
     deleteOne: function (burgerID, cb)
     {           
-        query = "delete from burgers where id = ?;";
+        query = "delete from Burgers where id = ?;";
     
         connection.query(query, burgerID, function(error, result)
         {   
